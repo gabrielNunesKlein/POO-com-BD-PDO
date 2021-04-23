@@ -7,8 +7,8 @@ class Conexao {
 
     public static function getConn(){
         if(!isset(self::$instance)){
-            sellf::$instance = new \PDO('mysql::host=localhost; dbname=pdo; charset=utf8', 'root', '');
-            return $instance;
+            self::$instance = new \PDO('mysql:host=localhost; dbname=PDO; charset=utf8','root', '');
+            return self::$instance;
         }
     }
 }
