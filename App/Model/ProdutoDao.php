@@ -36,6 +36,9 @@ class ProdutoDao {
     }
 
     public function delete($id){
-
+        $query = "DELETE FROM PRODUTO WHERE ID = ?";
+        $stm = Conexao::getConn()->prepare($query);
+        $stm->bindValue(1, $id);
+        $stm->execute();
     }
 }

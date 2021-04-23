@@ -11,7 +11,8 @@ $produto->setDescricao("Vidro");
 
 $produtoDao = new \App\Model\ProdutoDao();
 //$produtoDao->create($produto);
-$produtoDao->update($produto);
+//$produtoDao->update($produto);
+$produtoDao->delete(25);
 $produtoDao->read();
 
 
