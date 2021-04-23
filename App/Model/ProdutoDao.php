@@ -1,6 +1,6 @@
 <?php
 
-namespace \App\Model;
+namespace App\Model;
 
 class ProdutoDao {
 
@@ -17,6 +17,6 @@ class ProdutoDao {
     }
 
     public function delete($id){
-        
+
     }
 }

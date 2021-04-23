@@ -1,6 +1,6 @@
 <?php
 
-namespace \App\Model;
+namespace App\Model;
 
 class Produto {
     private $id;
@@ -15,12 +15,12 @@ class Produto {
         $this->id = id;
     }
 
-    public function getName(){
+    public function getNome(){
         return $this->nome;
     }
 
-    public function  setName($nome){
-        $this->nome = nome;
+    public function setNome($nome){
+        $this->nome = $nome;
     }
 
     public function getDescricao(){
