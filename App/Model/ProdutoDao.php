@@ -13,7 +13,14 @@ class ProdutoDao {
     }
 
     public function read(){
+        $query = 'SELECT * FROM PRODUTO';
+        $stm = Conexao::getConn()->prepare($query);
+        $stm->execute();
 
+        if($stm->rowCount() > 0){
+            $resultado = $stm->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }
     }
 
     public function update(Produto $produto){
