@@ -20,11 +20,19 @@ class ProdutoDao {
         if($stm->rowCount() > 0){
             $resultado = $stm->fetchAll(\PDO::FETCH_ASSOC);
             return $resultado;
+        }else{
+            return [];
         }
     }
 
     public function update(Produto $produto){
+        $query = 'UPDATE PRODUTO SET NOME = ?, DESCRICAO = ? WHERE ID = ?';
+        $stm = Conexao::getConn()->prepare($query);
+        $stm->bindValue(1, $produto->getNome());
+        $stm->bindValue(2, $produto->getDescricao());
+        $stm->bindValue(3, $produto->getId());
 
+        $stm->execute();
     }
 
     public function delete($id){
